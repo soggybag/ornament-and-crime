@@ -3,7 +3,17 @@
   <head>
     <title></title>
     <style>
+      body, html {
+        height: 100%;
+      }
+
       body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
 
       }
 
@@ -16,27 +26,147 @@
       }
 
       .panel {
-
+        width: 70.8mm;
+        height: 133.4mm;
+        background-color: #aaa;
+        position: relative;
+        /* background-image: url(oc.jpg); */
+        background-size: cover; 
       }
 
-      .screen {
+      .hole {
+        width: 3.2mm;
+        height: 3.2mm;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+      }
 
+      .hole:nth-child(1), .hole:nth-child(2) {
+        top: calc(3mm - 1.6mm);
+      }
+
+      .hole:nth-child(3), .hole:nth-child(4) {
+        bottom: calc(3mm - 1.6mm);
+      }
+
+      .hole:nth-child(1), .hole:nth-child(2) {
+        top: calc(3mm - 1.6mm);
+      }
+
+      .hole:nth-child(1), .hole:nth-child(4) {
+        left: calc(7.5mm - 1.6mm);
+      }
+
+      .hole:nth-child(2), .hole:nth-child(3) {
+        right: calc(7.5mm - 1.6mm);
+      }
+
+
+      .input:nth-child(1), 
+      .input:nth-child(2),
+      .input:nth-child(3),
+      .input:nth-child(4),
+      .output:nth-child(1),
+      .output:nth-child(2) {
+        position: absolute;
+        top: 3.68in;
+      }
+
+      .input:nth-child(5), 
+      .input:nth-child(6),
+      .input:nth-child(7),
+      .input:nth-child(8),
+      .output:nth-child(3),
+      .output:nth-child(4) {
+        position: absolute;
+        top: 4.175in;
+      }
+
+      .input:nth-child(1), 
+      .input:nth-child(5) {
+        left: 0.225in
+      }
+
+
+      .input:nth-child(2), 
+      .input:nth-child(6) {
+        left: 0.62in
+      }
+
+      .input:nth-child(3), 
+      .input:nth-child(7) {
+        left: 1.01in
+      }
+
+      .input:nth-child(4), 
+      .input:nth-child(8) {
+        left: 1.4in
+      }
+
+      .output:nth-child(1), 
+      .output:nth-child(3) {
+        left: 2in
+      }
+
+      .output:nth-child(2), 
+      .output:nth-child(4) {
+        left: 2.39in
+      }
+
+
+      .screen {
+        background-color:rgba(255,0,0,0.5);
+        width: 1.31in;
+        height: 0.7in;
+        position: absolute;
+        left: 0.34in;
+        top: 0.79in;
+        border-radius: 0.075in;
       }
 
       .buttons {
 
       }
 
-      .button {
 
+
+      .button {
+        width: 0.25in;
+        height: 0.25in;
+        background-color: rgba(0,255,0,0.5);
+        border-radius: 50%;
+        position: absolute;
+        right: 0.35in;
+      }
+
+      .button:nth-child(1) {
+        top: 0.65in;
+      }
+
+      .button:nth-child(2) {
+        top: 1.42in;
       }
 
       .encoders {
 
       }
 
-      .encorder {
+      .encoder {
+        width: 0.45in;
+        height: 0.45in;
+        background-color: rgba(255,0,255,0.5);
+        border-radius: 50%;
+        position: absolute;
+        top: 2.28in;
+      }
 
+      .encoder:nth-child(1) {
+        left: 0.31in;
+      }
+
+      .encoder:nth-child(2) {
+        right: 0.31in;
       }
 
       .inputs-outputs {
@@ -56,7 +186,19 @@
       }
 
       .output {
-        
+
+      }
+
+      .jack {
+        width: 0.125in;
+        height: 0.125in;
+        background-color: #000;
+        border-radius: 50%;
+        border: 0.06125in #eee solid;
+      }
+
+      .info {
+        position: absolute;
       }
 
     </style>
@@ -75,6 +217,10 @@
       <div class="app-name">App Name</div>
 
       <div class="panel">
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
+        <div class="hole"></div>
 
         <div class="screen"></div>
 
@@ -91,28 +237,84 @@
         <div class="inputs-and-outputs">
 
           <div class="inputs">
-            <div class="input"></div>
-            <div class="input"></div>
-            <div class="input"></div>
-            <div class="input"></div>
-            <div class="input"></div>
-            <div class="input"></div>
-            <div class="input"></div>
-            <div class="input"></div>
+            <div class="input jack"></div>
+            <div class="input jack"></div>
+            <div class="input jack"></div>
+            <div class="input jack"></div>
+            <div class="input jack"></div>
+            <div class="input jack"></div>
+            <div class="input jack"></div>
+            <div class="input jack"></div>
           </div>
 
           <div class="outputs">
-              <div class="output"></div>
-              <div class="output"></div>
-              <div class="output"></div>
-              <div class="output"></div>
+            <div class="output jack"></div>
+            <div class="output jack"></div>
+            <div class="output jack"></div>
+            <div class="output jack"></div>
           </div>
 
         </div>
- 
+        
+      </div>
+
+      <div class="info" id="screen">
+        <p>Screen</p>
+      </div>
+
+      <div class="info" id="button-top">
+        <p>Top Button</p>
+      </div>
+
+      <div class="info" id="button-bottom">
+        <p>Bottom Button</p>
+      </div>
+
+      <div class="info" id="encoder-left">
+        <p>Left Encoder</p>
+      </div>
+
+      <div class="info" id="encoder-right">
+        <p>Right Encoder</p>
+      </div>
+
+      <div class="info" id="cv-1">
+        <p>CV 1</p>
+      </div>
+
+      <div class="info" id="cv-2">
+        <p>CV 2</p>
+      </div>
+
+      <div class="info" id="cv-3">
+        <p>CV 3</p>
+      </div>
+
+      <div class="info" id="cv-4">
+        <p>CV 4</p>
+      </div>
+
+      <div class="info" id="tr-1">
+        <p>Trigger 1</p>
+      </div>
+
+      <div class="info" id="tr-2">
+        <p>Trigger 2</p>
+      </div>
+
+      <div class="info" id="tr-3">
+        <p>Trigger 3</p>
+      </div>
+
+      <div class="info" id="tr-4">
+        <p>Trigger 4</p>
       </div>
 
     </div>
 
+
+    <script>
+      
+    </script>
   </body>
 </html>
