@@ -162,8 +162,8 @@
       }
 
       .encoder {
-        width: 0.45in;
-        height: 0.45in;
+        width: 15mm;
+        height: 15mm;
         background-color: rgb(36, 36, 36);
         border-radius: 50%;
         position: absolute;
@@ -179,10 +179,11 @@
       }
 
       .encoder > div {
-        width: 0.2in;
-        height: 0.2in;
+        width: 8mm;
+        height: 8mm;
         background-color: #555;
         border-radius: 50%;
+        border: 1mm solid rgba(255,255,255, 0.05)
       }
 
 
@@ -213,11 +214,12 @@
       .output-bg {
         position: absolute;
         width: 20mm;
-        height: 30mm;
-        background-color: #bbb;
+        height: 35mm;
+        background-color: #1a1a1a;
         top: 85mm;
-        left: 50mm;
+        left: 49.5mm;
         /* z-index: 1; */
+        border-radius: 1mm;
       }
 
       .jack {
@@ -248,12 +250,39 @@
         clip-path: polygon(50% -50%,100% 50%,50% 150%,0 50%);
       }
 
+      .label-out {
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 3mm;
+        position: absolute;
+      }
+
+      .label-out:nth-child(3) {
+        left: 54mm;
+        top: 88mm;
+      }
+
+      .label-out:nth-child(4) {
+        left: 64mm;
+        top: 88mm;
+      }
+
+      .label-out:nth-child(5) {
+        left: 54mm;
+        top: 115mm;
+      }
+
+      .label-out:nth-child(6) {
+        left: 64mm;
+        top: 115mm;
+      }
+
     </style>
   </head>
   <body>
 
     <div class="container">
-      <div class="menu">
+      <!-- <div class="menu">
         <select>
           <option>Copier Maschine</option>
           <option>Quantermain</option>
@@ -261,7 +290,7 @@
         </select>
       </div>
 
-      <div class="app-name">App Name</div>
+      <div class="app-name">App Name</div> -->
 
       <div class="panel">
         <div class="hole"></div>
@@ -292,7 +321,7 @@
         <div class="inputs-and-outputs">
 
           <div class="inputs">
-            <div class="input jack hexagon">
+            <div class="input jack hexagon tr">
               <div></div>
             </div>
             <div class="input jack hexagon">
@@ -313,23 +342,40 @@
             <div class="input jack hexagon">
               <div></div>
             </div>
-            <div class="input jack hexagon"></div>
+            <div class="input jack hexagon">
+              <div></div>
+            </div>
           </div>
 
-          <div class="outputs">
-            <div class="output jack hexagon"></div>
-            <div class="output jack hexagon"></div>
-            <div class="output jack hexagon"></div>
-            <div class="output jack hexagon"></div>
-          </div>
 
           <div class="output-bg"></div>
+
+          <div class="label-out">A</div>
+          <div class="label-out">B</div>
+          <div class="label-out">C</div>
+          <div class="label-out">D</div>
+
+          <div class="outputs">
+            <div class="output jack hexagon">
+              <div></div>
+            </div>
+            <div class="output jack hexagon">
+              <div></div>
+            </div>
+            <div class="output jack hexagon">
+              <div></div>
+            </div>
+            <div class="output jack hexagon">
+              <div></div>
+            </div>
+
+          </div>
 
         </div>
         
       </div>
 
-      <div class="info" id="screen">
+      <!-- <div class="info" id="screen">
         <p>Screen</p>
       </div>
 
@@ -379,7 +425,7 @@
 
       <div class="info" id="tr-4">
         <p>Trigger 4</p>
-      </div>
+      </div> -->
 
     </div>
 
