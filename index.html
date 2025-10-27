@@ -5,6 +5,7 @@
     <style>
       body, html {
         height: 100%;
+        box-sizing: border-box;
       }
 
       body {
@@ -116,25 +117,33 @@
 
 
       .screen {
-        background-color:rgba(255,0,0,0.5);
-        width: 1.31in;
-        height: 0.7in;
+        
+        background-color:rgb(0, 0, 0);
+        width: calc(1.31in - 20px);
+        height: calc(0.7in - 20px);
         position: absolute;
         left: 0.34in;
         top: 0.79in;
         border-radius: 0.075in;
+
+        color: white;
+        font-family: monospace;
+        font-size: 0.08in;
+        padding: 10px;
       }
 
       .buttons {
 
       }
 
-
-
       .button {
         width: 0.25in;
         height: 0.25in;
-        background-color: rgba(0,255,0,0.5);
+        
+        background-color: rgb(47, 47, 47);
+        background-image: radial-gradient(circle at 30% 30%, #666, #222);
+        
+        
         border-radius: 50%;
         position: absolute;
         right: 0.35in;
@@ -155,15 +164,27 @@
       .encoder {
         width: 0.45in;
         height: 0.45in;
-        background-color: rgba(255,0,255,0.5);
+        background-color: rgb(36, 36, 36);
         border-radius: 50%;
         position: absolute;
         top: 2.28in;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .encoder:nth-child(1) {
         left: 0.31in;
       }
+
+      .encoder > div {
+        width: 0.2in;
+        height: 0.2in;
+        background-color: #555;
+        border-radius: 50%;
+      }
+
 
       .encoder:nth-child(2) {
         right: 0.31in;
@@ -190,15 +211,31 @@
       }
 
       .jack {
-        width: 0.125in;
-        height: 0.125in;
-        background-color: #000;
-        border-radius: 50%;
-        border: 0.06125in #eee solid;
+        /* width: 0.125in; */
+        height: 7mm;
+        aspect-ratio: 1/cos(30deg);
+        background-color: #dddbdb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+
+        & > div {
+          width: 3.5mm;
+          height: 3.5mm;
+          border-radius: 50%;
+          background-color: #555;
+          border: 1mm solid #dadada;
+          box-shadow: 0 0 3px #333;
+        }
       }
 
       .info {
         position: absolute;
+      }
+
+      .hexagon {
+        clip-path: polygon(50% -50%,100% 50%,50% 150%,0 50%);
       }
 
     </style>
@@ -222,7 +259,11 @@
         <div class="hole"></div>
         <div class="hole"></div>
 
-        <div class="screen"></div>
+        <div class="screen">
+          <div>Copiermaschine</div>
+          <div>Quantermain</div>
+          <div>Sequins</div>
+        </div>
 
         <div class="buttons">
           <div class="button"></div>
@@ -230,28 +271,46 @@
         </div>
 
         <div class="encoders">
-          <div class="encoder"></div>
-          <div class="encoder"></div>
+          <div class="encoder">
+            <div></div>
+          </div>
+          <div class="encoder">
+            <div></div>
+          </div>
         </div>
 
         <div class="inputs-and-outputs">
 
           <div class="inputs">
-            <div class="input jack"></div>
-            <div class="input jack"></div>
-            <div class="input jack"></div>
-            <div class="input jack"></div>
-            <div class="input jack"></div>
-            <div class="input jack"></div>
-            <div class="input jack"></div>
-            <div class="input jack"></div>
+            <div class="input jack hexagon">
+              <div></div>
+            </div>
+            <div class="input jack hexagon">
+              <div></div>
+            </div>
+            <div class="input jack hexagon">
+              <div></div>
+            </div>
+            <div class="input jack hexagon">
+              <div></div>
+            </div>
+            <div class="input jack hexagon">
+              <div></div>
+            </div>
+            <div class="input jack hexagon">
+              <div></div>
+            </div>
+            <div class="input jack hexagon">
+              <div></div>
+            </div>
+            <div class="input jack hexagon"></div>
           </div>
 
           <div class="outputs">
-            <div class="output jack"></div>
-            <div class="output jack"></div>
-            <div class="output jack"></div>
-            <div class="output jack"></div>
+            <div class="output jack hexagon"></div>
+            <div class="output jack hexagon"></div>
+            <div class="output jack hexagon"></div>
+            <div class="output jack hexagon"></div>
           </div>
 
         </div>
